@@ -1,5 +1,6 @@
 // Skills icons - https://icon-sets.iconify.design/
 import { Icon } from "@iconify/react";
+import React from "react";
 
 // Navbar Logo image (uncomment below and import your image)
 // import newLogo from "./images/yourFileName"
