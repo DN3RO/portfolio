@@ -39,7 +39,6 @@ const Article = () => {
 
   return (
     <div className='p-5'>
-      <h1>Title:{articleData.name}</h1>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
   );

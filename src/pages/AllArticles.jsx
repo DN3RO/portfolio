@@ -159,6 +159,7 @@ export default function AllArticles() {
                       name,
                       description,
                       date,
+                      soon,
                     }) {
                       return (
                         <Col key={id}>
@@ -168,6 +169,7 @@ export default function AllArticles() {
                             description={description}
                             id={id}
                             date={date}
+                            soon={soon} // Pass 'soon' prop
                           />
                         </Col>
                       );
@@ -178,6 +180,7 @@ export default function AllArticles() {
                       name,
                       description,
                       date,
+                      soon,
                     }) {
                       return (
                         <Col key={id}>
@@ -187,6 +190,7 @@ export default function AllArticles() {
                             description={description}
                             id={id}
                             date={date}
+                            soon={soon} // Pass 'soon' prop
                           />
                         </Col>
                       );
