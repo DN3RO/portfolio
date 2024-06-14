@@ -22,10 +22,32 @@ export default function Articles() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
+  const parseDate = (dateStr) => {
+    const [day, month, year] = dateStr.split('/');
+    return new Date(`20${year}`, month - 1, day); // Adjust this if the year needs to be parsed differently
+  };
+
   useEffect(() => {
-    setAllProjects(blogData);
-    setMainProjects([...blogData.slice(0, 3)]);
-  },[]);
+    // Log original data
+    console.log("Original blogData:", blogData);
+
+    // Sort the blogData by date in descending order
+    const sortedData = [...blogData].sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+
+      // Log each date conversion
+      console.log(`Parsing dates: ${a.date} -> ${dateA}, ${b.date} -> ${dateB}`);
+
+      return dateB - dateA;
+    });
+
+    // Log sorted data
+    console.log("Sorted blogData:", sortedData);
+
+    setAllProjects(sortedData);
+    setMainProjects(sortedData.slice(0, 3));
+  }, []);
 
   return (
     <Element name={"Articles"} id="Articles">
@@ -52,6 +74,8 @@ export default function Articles() {
                   name,
                   description,
                   url,
+                  date,
+                  soon,
                 }) {
                   return (
                     <Col key={id}>
@@ -60,7 +84,9 @@ export default function Articles() {
                         image={image}
                         name={name}
                         description={description}
+                        date={date}
                         url={url}
+                        soon={soon}
                       />
                     </Col>
                   );
@@ -75,7 +101,7 @@ export default function Articles() {
                         theme === "light" ? "outline-dark" : "outline-light"
                       }
                     >
-                      All <Icon icon="icomoon-free:github" /> Articles
+                      All <Icon icon="ph:article-ny-times-light" /> Articles
                     </Button>
                   </Link>
                 </Container>

@@ -129,7 +129,7 @@ export default function AllArticles() {
             <Container className="d-flex">
               <Title>
                 <h2>
-                  All <Icon icon="mdi:github" /> Articles
+                  All <Icon icon="ant-design:read-outlined" /> Articles
                 </h2>
                 <div className="underline"></div>
               </Title>

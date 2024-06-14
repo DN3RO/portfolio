@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Icons
 import { Icon } from "@iconify/react";
 // Media
-import GH from "../images/GH.svg";
+import GH from "../images/read.svg";
 // Components
 import { Card } from "react-bootstrap";
 
@@ -33,7 +33,7 @@ const StyledCardComponent = styled.div`
   }
 `;
 
-export default function StyledArticleCard({ image, name, description, id, date }) {
+export default function StyledArticleCard({ image, name, description, id, date, soon }) {
   return (
     <StyledCardComponent>
       <Card>
@@ -49,10 +49,16 @@ export default function StyledArticleCard({ image, name, description, id, date }
           <Card.Text>{date}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-center">
-          <Card.Link href={`/portfolio#/article/${id}`}>
-            {"Read Article "}
-            <Icon icon="icomoon-free:github" />
-          </Card.Link>
+          {soon ? (
+            <Card.Link href="#" style={{ color: 'gray', pointerEvents: 'none' }}>
+              Coming Soon
+            </Card.Link>
+          ) : (
+            <Card.Link href={`/portfolio#/article/${id}`}>
+              {"Read Article "}
+              <Icon icon="ant-design:read-outlined" />
+            </Card.Link>
+          )}
         </Card.Footer>
       </Card>
     </StyledCardComponent>
