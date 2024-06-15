@@ -1,22 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple HTML Page</title>
-</head>
-<body>
-  <header>
-    <h1>Welcome to Simple HTML Page</h1>
-  </header>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>One in a Billion </title><style>
+  html,
+  body {
+      margin: 0;
+      padding: 0;
+  }
   
-  <main>
-    <p>This is a simple HTML page template.</p>
-    <p>It includes basic HTML structure, CSS styling, and a viewport meta tag for responsive design.</p>
-  </main>
+  @media only screen {
+      body {
+          margin: 2em auto;
+          max-width: 900px;
+      }
+  }
   
-  <footer>
-    <p>&copy; 2024 Simple HTML Page. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  figure {
+      margin: 1.25em 0;
+      page-break-inside: avoid;
+  }
+  
+  img {
+      max-width: 100%;
+  }
+  
+  @media only print {
+      img {
+          max-height: 100vh;
+          object-fit: contain;
+      }
+  }
+  
+  @page {
+      margin: 1in;
+  }
+  
+  .column-list {
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .column {
+      padding: 0 1em;
+  }
+  
+  .column:first-child {
+      padding-left: 0;
+  }
+  
+  .column:last-child {
+      padding-right: 0;
+  }
+  
+  .table_of_contents-item {
+      display: block;
+  }
+  
+  .table_of_contents-indent-1 {
+      margin-left: 1.5rem;
+  }
+  
+  .table_of_contents-indent-2 {
+      margin-left: 3rem;
+  }
+  
+  .table_of_contents-indent-3 {
+      margin-left: 4.5rem;
+  }
+  
+  .bookmark {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+  }
+  
+  .bookmark-text {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .bookmark-info {
+      flex: 4 1 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  .bookmark-image {
+      width: 33%;
+      flex: 1 1 180px;
+      display: block;
+      position: relative;
+      object-fit: cover;
+  }
+  
+  .image {
+      text-align: center;
+  }
+  
+  .page-cover-image {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      max-height: 30vh;
+  }
+  
+  .page-header-icon {
+      margin-bottom: 1rem;
+  }
+  
+  .page-header-icon-with-cover {
+      margin-top: -0.72em;
+      margin-left: 0.07em;
+  }
+  
+  .page-header-icon img {
+      border-radius: 3px;
+  }
+  
+  .checkbox {
+      display: inline-flex;
+      width: 16px;
+      height: 16px;
+      background-size: 16px;
+      margin-left: 2px;
+      margin-right: 5px;
+  }
+  
+  .user-icon {
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 100%;
+      margin-right: 0.5rem;
+  }
+  
+  .highlight-default {
+      fill: rgba(55, 53, 47, 1);
+  }
+  
+  .highlight-gray {
+      fill: rgba(120, 119, 116, 1);
+  }
+  
+  .highlight-brown {
+      fill: rgba(159, 107, 83, 1);
+  }
+  
+  .highlight-orange {
+      fill: rgba(217, 115, 13, 1);
+  }
+  
+  .highlight-yellow {
+      fill: rgba(203, 145, 47, 1);
+  }
+  
+  .highlight-teal {
+      fill: rgba(68, 131, 97, 1);
+  }
+  
+  .highlight-blue {
+      fill: rgba(51, 126, 169, 1);
+  }
+  
+  .highlight-purple {
+      fill: rgba(144, 101, 176, 1);
+  }
+  
+  .highlight-pink {
+      fill: rgba(193, 76, 138, 1);
+  }
+  
+  .highlight-red {
+      fill: rgba(212, 76, 71, 1);
+  }
+  
+  .block-color-default {
+      fill: inherit;
+  }
+  
+  .block-color-gray {
+      fill: rgba(120, 119, 116, 1);
+  }
+  
+  .block-color-brown {
+      fill: rgba(159, 107, 83, 1);
+  }
+  
+  .block-color-orange {
+      fill: rgba(217, 115, 13, 1);
+  }
+  
+  .block-color-yellow {
+      fill: rgba(203, 145, 47, 1);
+  }
+  
+  .block-color-teal {
+      fill: rgba(68, 131, 97, 1);
+  }
+  
+  .block-color-blue {
+      fill: rgba(51, 126, 169, 1);
+  }
+  
+  .block-color-purple {
+      fill: rgba(144, 101, 176, 1);
+  }
+  
+  .block-color-pink {
+      fill: rgba(193, 76, 138, 1);
+  }
+  
+  .block-color-red {
+      fill: rgba(212, 76, 71, 1);
+  }
+</style></head><body><article id="8cf0a336-9625-464b-a4a9-ab2e563ed7c3" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1636044594149-6e2f289c3868?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">Five Figures, One Bug</h1><p class="page-description"></p></header><div class="page-body"><h3 id="d656456b-afd4-421e-909c-2e02befdc3cd" class="">My Journey to a Pinterest SSTI RCE Bounty</h3><p id="f2d78524-89bc-42d7-ace8-a2163163258d" class="">15 min read ⏱ · November 20, 2019 📅</p><hr id="a375c822-52f5-49c3-9f3b-2eb7a3e9198f"/><h3 id="ae34dfae-a4da-49e7-9277-958a84628dd2" class="">Understanding Server-Side Template Injection (SSTI)</h3><p id="c7cdbdf5-9e65-4153-8b27-17332a0c3202" class="">Server-Side Template Injection (SSTI) vulnerabilities occur when user input is concatenated into templates without proper sanitization. Templates are widely used in web applications to generate dynamic content by embedding logic into HTML or other types of files. When exploited, SSTI can allow attackers to execute arbitrary code on the server, leading to Remote Code Execution (RCE).</p><p id="966a3b78-be0c-4757-9758-d6ed289004e9" class="">One of the most commonly used template engines is Jinja2, particularly in Flask applications. Jinja2 is a powerful engine that allows the use of various programming constructs within templates. It supports control structures, such as loops and conditionals, as well as filters and functions that can manipulate data. However, this power also comes with risks. If user inputs are not carefully managed, they can introduce severe security vulnerabilities.</p><h3 id="9c2ae436-417b-4cb8-8406-c7b4a729fc85" class="">The Role of Email Templates</h3><p id="a32dc8e1-6488-4e22-9807-56ce2c3e1ad7" class="">Email templates are a typical use case for template engines. They allow for the customization of emails with dynamic content based on user data. While many parts of a web application might be secured against SSTI, email templates can sometimes be overlooked, creating a potential attack vector. This was the case in my discovery on Pinterest.</p><h3 id="d00d72f6-4549-4469-9d75-7ba77c52191f" class="">The Discovery: A Vulnerable Email Template</h3><p id="6c0fc3e8-3920-4684-a83f-c6b406ffb6b9" class="">On November 20, 2019, my bug bounty submission to Pinterest was accepted and verified as a critical RCE bug. This marked a significant milestone in my bug bounty journey, but the road to this success was anything but straightforward.</p><p id="2d6a3fcb-e8e4-488a-ac7d-60aa469ff422" class="">About a month before the approval date, I began working on Proof of Concepts (PoCs) and faced several rejections from Bugcrowd. Persistence paid off when I discovered that a specific email template used by Pinterest was vulnerable. This template was only triggered when a user changed their email address. The rest of the email templates in the system were secure, but this one oversight was all it took.</p><p id="2b8328cc-81af-4c37-ac46-915d168d5e6f" class="">The vulnerable template engine in use was Jinja2, a popular choice for Flask/Python applications. By injecting malicious payloads into the email change template, I demonstrated how an attacker could achieve RCE on Pinterest’s servers.</p><h3 id="d4b43bb3-36ed-41b5-b3d0-fb877ed0988f" class="">The Exploitation Process</h3><p id="1d0df335-36c0-460b-a48e-a1e3333d4fa5" class="">To exploit this vulnerability, I used a second-order SSTI technique. Here is a step-by-step outline of the process:</p><ol type="1" id="a41cce78-b9a8-4e24-9100-f336d05caf39" class="numbered-list" start="1"><li><em>Change the User&#x27;s First Name</em>: I altered the first name of the user to the desired payload that would exploit the SSTI.</li></ol><ol type="1" id="cc54a652-e617-4644-87ec-7515ff222dff" class="numbered-list" start="2"><li><em>Trigger the Email Send Method</em>: By changing the email address, the vulnerable template was executed, sending the malicious payload to the server.</li></ol><ol type="1" id="8679ab1c-2ffb-46d3-922a-a3a9a7de66a6" class="numbered-list" start="3"><li><em>Receive Output via Email</em>: The injected payload was processed, and the output was received in the email, confirming the successful exploitation.</li></ol><figure id="0790ad4a-08f8-4b5e-a5fc-e1c5e7b66f99" class="image"><a href="/portfolio/Pinterest0.jpeg"><img style="width:708px" src="/portfolio/Pinterest0.jpeg"/></a><figcaption>URL encoded payload to list all subclasses without using quotes of any kind</figcaption></figure><figure id="72732367-7c32-46eb-ba01-31a89622c509" class="image"><a href="/portfolio/Pinterest1.jpeg"><img style="width:708px" src="/portfolio/Pinterest1.jpeg"/></a><figcaption>Changing the Pinterest user name to the encoded payload</figcaption></figure><figure id="f620c42c-d8e1-4b29-ac73-9343257bc1d1" class="image"><a href="/portfolio/Pinterest2.jpeg"><img style="width:1916px" src="/portfolio/Pinterest2.jpeg"/></a><figcaption>Triggering the vulnerable template when changing the user email</figcaption></figure><figure id="045765ca-ffa4-4b1e-a91c-3d118730426a" class="image"><a href="/portfolio/Pinterest3.jpeg"><img style="width:1529px" src="/portfolio/Pinterest3.jpeg"/></a><figcaption>The best email a security researcher wants to get 😍</figcaption></figure><h3 id="03e3ba82-6e66-4d77-8b6f-9fbcb24a96a5" class="">Understanding the Payload</h3><p id="26ed7627-8ad8-42f3-b3f1-f9b499090b3d" class="">The payload used to print all subclasses in Python is:</p><p id="1bff8d92-bdf9-4b3c-bf6f-61be5958e63b" class="">python<br/>null.<br/><strong>class</strong>.<strong>mro</strong>[1].<strong>subclasses</strong>()[40]</p><p id="c7ad10be-34d6-470b-abf1-3827dc6a3edb" class="">Let&#x27;s break this down:</p><ul id="1c80833f-5e54-4275-b970-d50f82b035e4" class="bulleted-list"><li style="list-style-type:disc">null.<strong>class</strong>: In Python, null is equivalent to None. None is an instance of the NoneType class.</li></ul><ul id="d66eff45-9c5f-4ed0-a14d-98f0dc97e1b1" class="bulleted-list"><li style="list-style-type:disc"><strong>mro</strong>: This is the Method Resolution Order, a tuple of classes that are considered (in order) when looking for a base class during method resolution.</li></ul><ul id="89be98bb-1140-4f3a-a12f-537c2dd72dc0" class="bulleted-list"><li style="list-style-type:disc"><strong>mro</strong>[1]: This retrieves the second element in the MRO tuple, which is typically the base object class.</li></ul><ul id="1ce49f08-3180-4ca3-a939-d6889e68513d" class="bulleted-list"><li style="list-style-type:disc"><strong>subclasses</strong>(): This method returns a list of all classes that are subclasses of the base object class.</li></ul><ul id="0b4f4b59-9564-4896-a5cd-4d107e8ca356" class="bulleted-list"><li style="list-style-type:disc">[40]: This index accesses a specific subclass in the list.</li></ul><p id="77f95f2d-f235-4912-a23f-b7c0ce43d44e" class="">Using this payload, an attacker can print all subclasses and then loop over them to find classes that have sensitive methods or attributes. This was part of the approach I used to identify the subprocess.Popen class, which can be used to execute system commands.</p><h3 id="6be8106b-7472-4d1d-8a68-9aba6147a91b" class="">Limitation: Filtering of Quotes</h3><p id="aa5876db-bfeb-4ebd-943c-e0cb6e3e02dd" class="">One limitation of the payload was that all kinds of quotes (&quot;, &#x27;, and `) were filtered. This restriction made it challenging to construct certain payloads directly. However, by leveraging Python&#x27;s powerful introspection capabilities and the flexibility of Jinja2, I was able to bypass this limitation and achieve the desired exploitation.</p><h3 id="08e681a3-48b4-4efa-b670-3b05c9be6091" class="">Practical Exploitation</h3><p id="9b51bc80-a21e-404f-a596-3f09affab2c3" class="">After identifying the vulnerable email template, I crafted specific payloads to explore the server&#x27;s environment and identify exploitable classes and functions. Here are the steps I followed:</p><ol type="1" id="3b927b90-c826-4cd9-bd65-ddf71a81a910" class="numbered-list" start="1"><li><em>List All Subclasses</em>: Using the payload null.<strong>class</strong>.<strong>mro</strong>[1].<strong>subclasses</strong>(), I listed all subclasses to find potentially dangerous classes.</li></ol><ol type="1" id="5340bd6c-0580-4062-b99c-e30af2801204" class="numbered-list" start="2"><li><em>Locate subprocess.Popen</em>: By iterating through the subclasses, I located subprocess.Popen, which allows the execution of shell commands.</li></ol><ol type="1" id="0e211091-2e2c-45b5-9bf5-454ae1b579f4" class="numbered-list" start="3"><li><em>Execute Commands</em>: Using subprocess.Popen, I executed commands on the server, such as listing directory contents and reading sensitive files.</li></ol><figure id="39ff7f79-58c3-4880-bbb2-763908359347" class="image"><a href="/portfolio/Pinterest4.jpeg"><img style="width:1650px" src="/portfolio/Pinterest4.jpeg"/></a><figcaption>Tracking down the desired classes “Subprocess.Popen”</figcaption></figure><figure id="f1a540e6-b26b-4538-bd2d-7deeb7f2a45b" class="image"><a href="/portfolio/Pinterest5.jpeg"><img style="width:708px" src="/portfolio/Pinterest5.jpeg"/></a><figcaption>Tracking down the desired classes “file”</figcaption></figure><figure id="7fa94708-e824-46c2-b77d-cad3b33dbfdc" class="image"><a href="/portfolio/Pinterest6.jpeg"><img style="width:697px" src="/portfolio/Pinterest6.jpeg"/></a><figcaption>Find additional sensitive functions and classes </figcaption></figure><h3 id="f656b7fd-66df-4dcb-bb3d-fd2c96f95ab2" class="">The Impact: First Paid Bug Bounty</h3><p id="25e117c3-8ba2-45fd-bf69-05d91d198d89" class="">This discovery was particularly special because it was my first paid bug bounty, and it was a substantial one 💰 a five-figure reward. The validation of my efforts and the financial reward reinforced my passion for cybersecurity and ethical hacking.</p><h3 id="de3b5f5f-8c5c-45c2-acf4-fe1deadfc6f9" class="">Inspiration and Persistence</h3><p id="748041d3-58a3-4667-a31c-54f093947008" class="">My journey was inspired by the work of security researcher Orange Tsai, particularly his report on <a href="https://hackerone.com/reports/125980">Uber’s SSTI vulnerability</a>. His detailed analysis and methodology provided a roadmap for my own research and persistence.</p><h3 id="d8f488b3-9254-40ed-bde6-471de99f4499" class="">Conclusion</h3><p id="c47ffad8-0032-42ad-9465-38ddcfadc778" class="">The experience of finding and reporting this vulnerability taught me invaluable lessons about the importance of thoroughness and persistence in security research. It only takes one overlooked template to introduce a critical vulnerability, highlighting the need for comprehensive security practices.</p><p id="3f436bfd-ec07-4562-bf34-30dd6d5ec381" class="">In the ever-evolving field of cybersecurity, sharing our experiences and findings is crucial. It not only helps improve the security of applications but also inspires and educates the next generation of security researchers.</p><p id="f1c393a8-42cf-4754-be9b-ac9ab61efaa2" class="">Although I am sharing this journey a few years after the discovery, the lessons remain timeless. The delay in sharing underscores the importance of continuous learning and reflection in cybersecurity. It also demonstrates that the insights gained from past experiences can still be highly relevant and valuable today.</p><p id="a27b28aa-ee68-4c82-a0e2-f17377e38658" class="">By sharing this journey, I hope to inspire others to dive into the world of cybersecurity, where persistence and a keen eye for detail can lead to remarkable discoveries and rewarding experiences.</p><p id="5a102efd-0fb8-4a68-9b00-316ad9163b4a" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
