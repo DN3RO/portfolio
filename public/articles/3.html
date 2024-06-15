@@ -1,0 +1,216 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>One in a Billion </title><style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+        }
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .bookmark {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+    }
+    
+    .image {
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+    
+    .page-header-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .checkbox {
+        display: inline-flex;
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .highlight-default {
+        fill: rgba(55, 53, 47, 1);
+    }
+    
+    .highlight-gray {
+        fill: rgba(120, 119, 116, 1);
+    }
+    
+    .highlight-brown {
+        fill: rgba(159, 107, 83, 1);
+    }
+    
+    .highlight-orange {
+        fill: rgba(217, 115, 13, 1);
+    }
+    
+    .highlight-yellow {
+        fill: rgba(203, 145, 47, 1);
+    }
+    
+    .highlight-teal {
+        fill: rgba(68, 131, 97, 1);
+    }
+    
+    .highlight-blue {
+        fill: rgba(51, 126, 169, 1);
+    }
+    
+    .highlight-purple {
+        fill: rgba(144, 101, 176, 1);
+    }
+    
+    .highlight-pink {
+        fill: rgba(193, 76, 138, 1);
+    }
+    
+    .highlight-red {
+        fill: rgba(212, 76, 71, 1);
+    }
+    
+    .block-color-default {
+        fill: inherit;
+    }
+    
+    .block-color-gray {
+        fill: rgba(120, 119, 116, 1);
+    }
+    
+    .block-color-brown {
+        fill: rgba(159, 107, 83, 1);
+    }
+    
+    .block-color-orange {
+        fill: rgba(217, 115, 13, 1);
+    }
+    
+    .block-color-yellow {
+        fill: rgba(203, 145, 47, 1);
+    }
+    
+    .block-color-teal {
+        fill: rgba(68, 131, 97, 1);
+    }
+    
+    .block-color-blue {
+        fill: rgba(51, 126, 169, 1);
+    }
+    
+    .block-color-purple {
+        fill: rgba(144, 101, 176, 1);
+    }
+    
+    .block-color-pink {
+        fill: rgba(193, 76, 138, 1);
+    }
+    
+    .block-color-red {
+        fill: rgba(212, 76, 71, 1);
+    }
+</style></head><body><article id="9b6af675-143a-4eab-a037-166a449bfce4" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1544531585-f14f463149ec?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">DFIR on the Main Stage</h1><p class="page-description"></p></header><div class="page-body"><h3 id="41534171-1303-4a42-96a2-5004caa2876f" class="">My BsidesTLV 2021 Talk with Yossi Sassi </h3><p id="45e94d8f-2cdd-48ea-92ff-f4d2bfaedf9f" class="">35 min read ⏱ · July 22, 2021 📅</p><hr id="8c5bed73-1684-42b2-92ba-b39d60291253"/><p id="67f8bff9-7a9a-4f56-a04e-86cd337a0a39" class="">
+</p><p id="6d8b26e8-cc7a-4bb4-bea1-0f823114521b" class="">In this lecture from BsidesTLV 2021, we will explore crucial digital forensics artifacts that are essential for both attackers and defenders to understand. Additionally, the session introduces BMCacheHunter, a specialized tool designed to aid in forensic investigations. You can access it here <a href="https://github.com/DN3RO/BMCacheHunter">BMCacheHunter</a>.</p><p id="223f6905-06e9-438a-84cd-b2984b528b90" class="">
+</p><figure id="9f1fff4f-ca2f-4dce-991b-4447d6d6f8e1"><div class="source"><center><iframe width="770" height="430" src="https://www.youtube.com/embed/60Y07kdcIcw" title="Yossi Sassi &amp; Nir Jacob Saias - Forensic artifacts that make you go &quot;Mmm..&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center></div></figure><p id="978210e9-803a-4e81-aaa7-532616eaf926" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

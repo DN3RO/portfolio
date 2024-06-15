@@ -8,6 +8,7 @@ import { moreInfo } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Title } from "./globalStyledComponents";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const StyledAboutMe = styled.section`
   p {
@@ -30,7 +31,7 @@ export default function AboutMe() {
         <Container>
           <Container className="d-flex">
             <Title>
-              <h2>About Me</h2>
+              <h2>Whoami</h2>
               <div className="underline"></div>
             </Title>
           </Container>
