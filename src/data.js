@@ -34,7 +34,7 @@ export const BugCrowd = <Icon icon="simple-icons:bugcrowd" />;
   Add a second paragraph for the about me section.
 */
 export const moreInfo =
-  "Hey! I'm Nir, leading the Adversarial Tactics Team at Sygnia. I specialize in Red Team operations and Web Application Penetration Testing. Outside of work, I'm a private pilot. I've worked with foreign armies and Fortune 100 companies, gaining a diverse skill set in cybersecurity. Always up for a new challenge!";
+  "Hey! I'm Nir, leading an Adversarial Tactics Team at Sygnia. I specialize in Red Team operations and Web Application Penetration Testing. Beyond my professional life, I’m also a private pilot. I've worked with foreign armies and Fortune 100 companies, gaining a diverse skill set in cybersecurity. Always up for a new challenge!";
 
 /* Skills
  ************************************************************** 

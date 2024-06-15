@@ -97,7 +97,7 @@ export default function Hero() {
           <Col className="d-none d-md-block">
             <img
               src={Logo}
-              alt="React Logo"
+              alt="DN3RO Logo"
               className="w-50 mx-auto hero-img"
             />
           </Col>
