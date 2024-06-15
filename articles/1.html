@@ -1,1 +1,213 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>One in a Billion: My First AI Project Creating a Master Fingerprint using Generative Adversarial Networks</title></head><body><article id="cdf69ca9-d826-4d89-836a-e84d900ef9f2" class="page sans"><header><h1 class="page-title">One in a Billion: My First AI Project Creating a Master Fingerprint using Generative Adversarial Networks</h1><p class="page-description"></p></header><div class="page-body"><p id="593c9f84-06e5-411c-817e-5b03a4963e7c" class=""><strong>Originally posted in Hebrew </strong><strong><a href="https://www.pc.co.il/advertisements/292114/">here</a></strong><strong>.</strong></p><p id="d129bf2c-b656-47db-886c-4811f2bca96e" class="">Today, as I bring this article to my blog in English, it&#x27;s fascinating to see how AI capabilities have become more accessible and widely appreciated compared to when I first explored this topic. This article refers to the original Hebrew version and the original study found <a href="https://arxiv.org/pdf/1705.07386">here</a>.</p><h3 id="15ea4fb7-f32e-416c-b4a4-4ba6ff9c3a1c" class="">Is Our Fingerprint the Optimal Identification Mechanism?</h3><p id="ca28861f-5f40-4403-abbf-875b566bd60b" class="">The use of fingerprints for identification is increasing daily. We use this method to authenticate ourselves in various applications, from unlocking doors in offices and smart homes to securing our smartphones and authorizing sensitive transactions in various apps. But is our fingerprint, one of our most unique biometric assets with a one-in-a-billion chance of duplication, truly the best identification mechanism available today?</p><p id="b5d67d42-9ceb-402f-8b41-4f8e12fbd955" class="">To answer this, we need to delve deeply into artificial intelligence. We&#x27;ll compare the structure of a standard algorithm to that of a deep learning algorithm. While a standard algorithm consists of a set of conditions that produce an output based on the input received, a deep algorithm requires a &quot;training&quot; process to become intelligent. During training, the algorithm is presented with input and matching output that we expect the algorithm to produce.</p><p id="904e41b7-87a1-4520-b046-36c35cf08db1" class="">Surprisingly, one of the most significant algorithms in this innovative field isn&#x27;t new at all. Neural networks, a type of &quot;black box&quot; algorithm designed to mimic the human brain, were first introduced in 1943 by Warren McCulloch and Walter Pitts.</p><p id="aeb9d70a-69e3-4676-a6c8-1c5eb3f36bcc" class="">With this type of algorithm, we cannot see or precisely understand the rationale behind the model&#x27;s decisions, much like we can&#x27;t fully explain human brain activity. For instance, a neural network trained for a specific task, such as handwriting recognition, can achieve over 99% accuracy—an impressive feat by any standard! We can see this achievement in language recognition systems like virtual assistants and recommendation engines that try to characterize our tastes on content providers like Netflix and Spotify.</p><p id="98ae7e2b-9b51-4d92-8e1e-b5a090248ba0" class="">In 2014, a new algorithm called Generative Adversarial Network (GAN) was introduced, based on competition between two neural networks: a Generator (G) and a Discriminator (D).</p><h3 id="a3132f09-5385-41ab-a417-7c3db48b5f98" class="">How GAN Works:</h3><ol type="1" id="1e652493-194a-42d1-be3a-c765836dcf14" class="numbered-list" start="1"><li>The Discriminator (D) receives 5 real images.<br/>1.1. For each image, the Discriminator (D) must decide if the image is real or fake.<br/>1.2. After the Discriminator&#x27;s decision, a feedback loop occurs, adjusting the connections in the D neural network accordingly.<br/></li></ol><ol type="1" id="64d784bb-4461-4fa7-821a-101953c32734" class="numbered-list" start="2"><li>For every 5 real images (Step 1), the Generator (G) creates a synthetic image and sends it to the Discriminator (D).<br/>2.1. The Discriminator (D) must now decide if the image is real or fake based on the images it has already seen.<br/>2.2. After the Discriminator&#x27;s decision, a feedback loop occurs, adjusting the connections in the G neural network accordingly.<br/></li></ol><p id="d90ff5b8-fe0f-43b1-8eb5-c1db4ca1caeb" class="">This technique is called Unsupervised Learning, meaning the GAN&#x27;s input does not contain labels, only images. Therefore, the algorithm does not know what is depicted in each image. As a result, the algorithm learns and improves through the feedback loop.</p><p id="807e4a8b-2424-4246-bc79-00719d8df21a" class="">The uniqueness of GAN lies in its ability to mimic the input and generate images similar to those presented to it. How similar? Very similar, and sometimes even better than the images used as input for learning.</p><figure id="ae99a7f8-a807-4349-9809-98cdfa04aa0e" class="image"><a href="/portfolio/GAN.jpeg"><img style="width:600px" src="/portfolio/GAN.jpeg"/></a></figure><h3 id="215ea6b4-c635-4e0c-a07a-129c269f3e7c" class="">The Connection Between Artificial Intelligence and Information Security</h3><p id="b97e8549-029c-45cb-aba2-2350e0d796f1" class="">In October 2018, researchers from various U.S. universities published a study showing how they generated synthetic fingerprints using the GAN model. They demonstrated that these fingerprints had up to a 22% match with global fingerprints, meaning for one-fifth of the population, it is impossible to distinguish between their fingerprint and a synthetic one. Like a master key fitting multiple doors, the synthetic fingerprint has a high match rate with many fingerprints, earning the name DeepMasterPrints.</p><p id="a0625927-4f3a-4f32-84a1-71f7a1e182fb" class="">As part of our research processes at Bugsec, we decided to understand the process in all its layers, attempting to replicate and achieve the same results as described. At the end of the learning process and implementation, we can say we were not disappointed and achieved impressive results that surprised even us!</p><p id="82e2fbd7-aa11-434a-8351-6a1d1546a6b4" class="">This exploration highlights the evolving capabilities of AI and its implications for security, challenging the long-held belief that fingerprints are an unbreakable biometric identifier.</p><figure id="3d6cf5bd-0c13-497f-9908-f7aaf66b516c" class="image"><a href="/portfolio/FingerPrints.jpeg"><img style="width:600px" src="/portfolio/FingerPrints.jpeg"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>One in a Billion </title><style>
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen {
+    body {
+        margin: 2em auto;
+        max-width: 900px;
+    }
+}
+
+figure {
+    margin: 1.25em 0;
+    page-break-inside: avoid;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media only print {
+    img {
+        max-height: 100vh;
+        object-fit: contain;
+    }
+}
+
+@page {
+    margin: 1in;
+}
+
+.column-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    padding: 0 1em;
+}
+
+.column:first-child {
+    padding-left: 0;
+}
+
+.column:last-child {
+    padding-right: 0;
+}
+
+.table_of_contents-item {
+    display: block;
+}
+
+.table_of_contents-indent-1 {
+    margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+    margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+    margin-left: 4.5rem;
+}
+
+.bookmark {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.bookmark-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.bookmark-info {
+    flex: 4 1 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bookmark-image {
+    width: 33%;
+    flex: 1 1 180px;
+    display: block;
+    position: relative;
+    object-fit: cover;
+}
+
+.image {
+    text-align: center;
+}
+
+.page-cover-image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 30vh;
+}
+
+.page-header-icon {
+    margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+    margin-top: -0.72em;
+    margin-left: 0.07em;
+}
+
+.page-header-icon img {
+    border-radius: 3px;
+}
+
+.checkbox {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+.user-icon {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+}
+
+.highlight-default {
+    fill: rgba(55, 53, 47, 1);
+}
+
+.highlight-gray {
+    fill: rgba(120, 119, 116, 1);
+}
+
+.highlight-brown {
+    fill: rgba(159, 107, 83, 1);
+}
+
+.highlight-orange {
+    fill: rgba(217, 115, 13, 1);
+}
+
+.highlight-yellow {
+    fill: rgba(203, 145, 47, 1);
+}
+
+.highlight-teal {
+    fill: rgba(68, 131, 97, 1);
+}
+
+.highlight-blue {
+    fill: rgba(51, 126, 169, 1);
+}
+
+.highlight-purple {
+    fill: rgba(144, 101, 176, 1);
+}
+
+.highlight-pink {
+    fill: rgba(193, 76, 138, 1);
+}
+
+.highlight-red {
+    fill: rgba(212, 76, 71, 1);
+}
+
+.block-color-default {
+    fill: inherit;
+}
+
+.block-color-gray {
+    fill: rgba(120, 119, 116, 1);
+}
+
+.block-color-brown {
+    fill: rgba(159, 107, 83, 1);
+}
+
+.block-color-orange {
+    fill: rgba(217, 115, 13, 1);
+}
+
+.block-color-yellow {
+    fill: rgba(203, 145, 47, 1);
+}
+
+.block-color-teal {
+    fill: rgba(68, 131, 97, 1);
+}
+
+.block-color-blue {
+    fill: rgba(51, 126, 169, 1);
+}
+
+.block-color-purple {
+    fill: rgba(144, 101, 176, 1);
+}
+
+.block-color-pink {
+    fill: rgba(193, 76, 138, 1);
+}
+
+.block-color-red {
+    fill: rgba(212, 76, 71, 1);
+}  
+    </style></head><body><article id="cdf69ca9-d826-4d89-836a-e84d900ef9f2" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_new_york_city_grid.jpg" style="object-position:center 50%"/><h1 class="page-title"><strong>One in a Billion</strong> </h1><p class="page-description"></p></header><div class="page-body"><h3 id="a7c43786-8690-43e3-be08-4369dc97a14a" class=""><strong>My First AI Project Creating a Master Fingerprint using Generative Adversarial Networks</strong></h3><p id="fa0ec2c2-a915-4176-b2d3-018f40e7fcbd" class="">10 min read ⏱ · March 6, 2019 📅</p><hr id="df197a6b-42ec-44e6-b754-8bfee2c5b38a"/><p id="593c9f84-06e5-411c-817e-5b03a4963e7c" class=""><strong>Originally posted in Hebrew </strong><strong><a href="https://www.pc.co.il/advertisements/292114/">here</a></strong><strong>.</strong></p><p id="d129bf2c-b656-47db-886c-4811f2bca96e" class="">Today, as I bring this article to my blog in English, it&#x27;s fascinating to see how AI capabilities have become more accessible and widely appreciated compared to when I first explored this topic. This article refers to the original Hebrew version and the real study found <a href="https://arxiv.org/pdf/1705.07386">here</a>.</p><h3 id="15ea4fb7-f32e-416c-b4a4-4ba6ff9c3a1c" class="">Is Our Fingerprint the Optimal Identification Mechanism?</h3><p id="ca28861f-5f40-4403-abbf-875b566bd60b" class="">The use of fingerprints for identification is increasing daily. We use this method to authenticate ourselves in various applications, from unlocking doors in offices and smart homes to securing our smartphones and authorizing sensitive transactions in various apps. But is our fingerprint, one of our most unique biometric assets with a one-in-a-billion chance of duplication, truly the best identification mechanism available today?</p><p id="b5d67d42-9ceb-402f-8b41-4f8e12fbd955" class="">To answer this, we need to delve deeply into artificial intelligence. We&#x27;ll compare the structure of a standard algorithm to that of a deep learning algorithm. While a standard algorithm consists of a set of conditions that produce an output based on the input received, a deep algorithm requires a &quot;training&quot; process to become intelligent. During training, the algorithm is presented with input and matching output that we expect the algorithm to produce.</p><p id="904e41b7-87a1-4520-b046-36c35cf08db1" class="">Surprisingly, one of the most significant algorithms in this innovative field isn&#x27;t new at all. Neural networks, a type of &quot;black box&quot; algorithm designed to mimic the human brain, were first introduced in 1943 by Warren McCulloch and Walter Pitts.</p><p id="aeb9d70a-69e3-4676-a6c8-1c5eb3f36bcc" class="">With this type of algorithm, we cannot see or precisely understand the rationale behind the model&#x27;s decisions, much like we can&#x27;t fully explain human brain activity. For instance, a neural network trained for a specific task, such as handwriting recognition, can achieve over 99% accuracy—an impressive feat by any standard! We can see this achievement in language recognition systems like virtual assistants and recommendation engines that try to characterize our tastes on content providers like Netflix and Spotify.</p><p id="98ae7e2b-9b51-4d92-8e1e-b5a090248ba0" class="">In 2014, a new algorithm called Generative Adversarial Network (GAN) was introduced, based on competition between two neural networks: a Generator (G) and a Discriminator (D).</p><h3 id="a3132f09-5385-41ab-a417-7c3db48b5f98" class="">How GAN Works:</h3><ol type="1" id="1e652493-194a-42d1-be3a-c765836dcf14" class="numbered-list" start="1"><li>The Discriminator (D) receives 5 real images.<br/>1.1. For each image, the Discriminator (D) must decide if the image is real or fake.<br/>1.2. After the Discriminator&#x27;s decision, a feedback loop occurs, adjusting the connections in the D neural network accordingly.<br/></li></ol><ol type="1" id="64d784bb-4461-4fa7-821a-101953c32734" class="numbered-list" start="2"><li>For every 5 real images (Step 1), the Generator (G) creates a synthetic image and sends it to the Discriminator (D).<br/>2.1. The Discriminator (D) must now decide if the image is real or fake based on the images it has already seen.<br/>2.2. After the Discriminator&#x27;s decision, a feedback loop occurs, adjusting the connections in the G neural network accordingly.<br/></li></ol><p id="d90ff5b8-fe0f-43b1-8eb5-c1db4ca1caeb" class="">This technique is called Unsupervised Learning, meaning the GAN&#x27;s input does not contain labels, only images. Therefore, the algorithm does not know what is depicted in each image. As a result, the algorithm learns and improves through the feedback loop.</p><p id="807e4a8b-2424-4246-bc79-00719d8df21a" class="">The uniqueness of GAN lies in its ability to mimic the input and generate images similar to those presented to it. How similar? Very similar, and sometimes even better than the images used as input for learning.</p><figure id="ae99a7f8-a807-4349-9809-98cdfa04aa0e" class="image"><a href="/portfolio/GAN.jpeg"><img style="width:600px" src="/portfolio/GAN.jpeg"/></a></figure><h3 id="215ea6b4-c635-4e0c-a07a-129c269f3e7c" class="">The Connection Between Artificial Intelligence and Information Security</h3><p id="b97e8549-029c-45cb-aba2-2350e0d796f1" class="">In October 2018, researchers from various U.S. universities published a study showing how they generated synthetic fingerprints using the GAN model. They demonstrated that these fingerprints had up to a 22% match with global fingerprints, meaning for one-fifth of the population, it is impossible to distinguish between their fingerprint and a synthetic one. Like a master key fitting multiple doors, the synthetic fingerprint has a high match rate with many fingerprints, earning the name DeepMasterPrints.</p><p id="a0625927-4f3a-4f32-84a1-71f7a1e182fb" class="">As part of our research processes at Bugsec, we decided to understand the process in all its layers, attempting to replicate and achieve the same results as described. At the end of the learning process and implementation, we can say we were not disappointed and achieved impressive results that surprised even us!</p><p id="82e2fbd7-aa11-434a-8351-6a1d1546a6b4" class="">This exploration highlights the evolving capabilities of AI and its implications for security, challenging the long-held belief that fingerprints are an unbreakable biometric identifier.</p><figure id="3d6cf5bd-0c13-497f-9908-f7aaf66b516c" class="image"><a href="/portfolio/FingerPrints.jpeg"><img style="width:600px" src="/portfolio/FingerPrints.jpeg"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
