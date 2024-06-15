@@ -75,6 +75,7 @@ export default function Articles() {
                   description,
                   url,
                   date,
+                  time,
                   soon,
                 }) {
                   return (
@@ -85,6 +86,7 @@ export default function Articles() {
                         name={name}
                         description={description}
                         date={date}
+                        time={time}
                         url={url}
                         soon={soon}
                       />

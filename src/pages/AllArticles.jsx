@@ -180,6 +180,7 @@ export default function AllArticles() {
                       name,
                       description,
                       date,
+                      time,
                       soon,
                     }) {
                       return (
@@ -190,7 +191,8 @@ export default function AllArticles() {
                             description={description}
                             id={id}
                             date={date}
-                            soon={soon} // Pass 'soon' prop
+                            time={time}
+                            soon={soon}
                           />
                         </Col>
                       );

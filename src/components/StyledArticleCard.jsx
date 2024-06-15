@@ -33,7 +33,8 @@ const StyledCardComponent = styled.div`
   }
 `;
 
-export default function StyledArticleCard({ image, name, description, id, date, soon }) {
+
+export default function StyledArticleCard({ image, name, description, id, date, soon, time }) {
   return (
     <StyledCardComponent>
       <Card>
@@ -46,12 +47,14 @@ export default function StyledArticleCard({ image, name, description, id, date, 
         <Card.Body className="overflow-auto text-center">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
-          <Card.Text>{date}</Card.Text>
+          <Card.Text>
+            {time} min read ⏱ · {date} 📅
+          </Card.Text>
         </Card.Body>
         <Card.Footer className="text-center">
           {soon ? (
             <Card.Link href="#" style={{ color: 'gray', pointerEvents: 'none' }}>
-              Coming Soon
+              Coming Soon...
             </Card.Link>
           ) : (
             <Card.Link href={`/portfolio#/article/${id}`}>
