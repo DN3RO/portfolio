@@ -1,0 +1,219 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unmasking Your Cloudflare Assets: A Unique Enumeration Technique</title><style>
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen {
+    body {
+        margin: 2em auto;
+        max-width: 900px;
+    }
+}
+
+figure {
+    margin: 1.25em 0;
+    page-break-inside: avoid;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media only print {
+    img {
+        max-height: 100vh;
+        object-fit: contain;
+    }
+}
+
+@page {
+    margin: 1in;
+}
+
+.column-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    padding: 0 1em;
+}
+
+.column:first-child {
+    padding-left: 0;
+}
+
+.column:last-child {
+    padding-right: 0;
+}
+
+.table_of_contents-item {
+    display: block;
+}
+
+.table_of_contents-indent-1 {
+    margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+    margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+    margin-left: 4.5rem;
+}
+
+.bookmark {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.bookmark-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.bookmark-info {
+    flex: 4 1 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bookmark-image {
+    width: 33%;
+    flex: 1 1 180px;
+    display: block;
+    position: relative;
+    object-fit: cover;
+}
+
+.image {
+    text-align: center;
+}
+
+.page-cover-image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 30vh;
+}
+
+.page-header-icon {
+    margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+    margin-top: -0.72em;
+    margin-left: 0.07em;
+}
+
+.page-header-icon img {
+    border-radius: 3px;
+}
+
+.checkbox {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+.user-icon {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+}
+
+.highlight-default {
+    fill: rgba(55, 53, 47, 1);
+}
+
+.highlight-gray {
+    fill: rgba(120, 119, 116, 1);
+}
+
+.highlight-brown {
+    fill: rgba(159, 107, 83, 1);
+}
+
+.highlight-orange {
+    fill: rgba(217, 115, 13, 1);
+}
+
+.highlight-yellow {
+    fill: rgba(203, 145, 47, 1);
+}
+
+.highlight-teal {
+    fill: rgba(68, 131, 97, 1);
+}
+
+.highlight-blue {
+    fill: rgba(51, 126, 169, 1);
+}
+
+.highlight-purple {
+    fill: rgba(144, 101, 176, 1);
+}
+
+.highlight-pink {
+    fill: rgba(193, 76, 138, 1);
+}
+
+.highlight-red {
+    fill: rgba(212, 76, 71, 1);
+}
+
+.block-color-default {
+    fill: inherit;
+}
+
+.block-color-gray {
+    fill: rgba(120, 119, 116, 1);
+}
+
+.block-color-brown {
+    fill: rgba(159, 107, 83, 1);
+}
+
+.block-color-orange {
+    fill: rgba(217, 115, 13, 1);
+}
+
+.block-color-yellow {
+    fill: rgba(203, 145, 47, 1);
+}
+
+.block-color-teal {
+    fill: rgba(68, 131, 97, 1);
+}
+
+.block-color-blue {
+    fill: rgba(51, 126, 169, 1);
+}
+
+.block-color-purple {
+    fill: rgba(144, 101, 176, 1);
+}
+
+.block-color-pink {
+    fill: rgba(193, 76, 138, 1);
+}
+
+.block-color-red {
+    fill: rgba(212, 76, 71, 1);
+}  
+</style></head><body><article id="4b5f2ef3-0fd0-4bf7-aec3-ed5b06721bbc" class="page sans"><header><img class="page-cover-image" src="/portfolio/cloudflare-1.png" style="object-position:center 64.14%"/><h1 class="page-title">Unmasking Your Cloudflare Assets</h1><p class="page-description"></p></header><div class="page-body"><h3 id="778c4afc-ca83-4eda-8d35-3633029e6200" class="">A Unique Enumeration Technique</h3><p id="87786156-dce4-47a0-aaab-25ebcbe8b9fd" class="">10 min read ⏱ · June 15, 2024 📅</p><hr id="46b08428-980d-4194-bc68-7ac71b3b041a"/><h3 id="69b9a59f-d60b-42bc-b93c-4029f04689bc" class="">Introduction</h3><p id="38e3b7b6-d185-4418-86f4-63aeabed6d59" class="">Cloudflare has become a cornerstone for many companies looking to improve their website performance and security. As described in Cloudflare&#x27;s <a href="https://blog.cloudflare.com/whats-the-story-behind-the-names-of-cloudflares-name-servers">blog post</a>, when a user signs up for Cloudflare, they receive two unique name servers, each named after a boy and a girl. These name servers, such as <code>bob.ns.cloudflare.com</code> and <code>lola.ns.cloudflare.com</code>, play a crucial role in the seamless integration of Cloudflare’s services with the user’s domain.</p><p id="ca82c65a-8533-4ec7-94ec-1f53bcb75b27" class="">Cloudflare’s design of name servers aims to simplify the sign-up process and ensure smooth DNS resolution. However, this naming convention can also be leveraged for security research and asset discovery.</p><hr id="f2202461-3359-4b67-81a4-bb2fd5c73399"/><h3 id="a42f09aa-30e0-4e0e-b88e-b24f27eaad5b" class="">Discovering Cloudflare-Protected Assets</h3><p id="a8794fdb-f40c-42fb-8f51-c9f3522cea8c" class="">The unique pairing of Cloudflare name servers for each account offers an interesting opportunity to identify related domains under the same Cloudflare account. Here’s a step-by-step guide on how to uncover these assets:</p><ol type="1" id="b72dc51b-0965-4027-ae9f-90d70914749b" class="numbered-list" start="1"><li><strong>Identify the Cloudflare Name Servers:</strong><br/>Start by examining the DNS records of a target domain to identify its Cloudflare name servers. These will typically follow the format <br/><code>[boy].ns.cloudflare.com</code> and <code>[girl].ns.cloudflare.com</code>.</li></ol><ol type="1" id="7fe4680c-7dbd-49ff-be3f-9079e4fb3d55" class="numbered-list" start="2"><li><strong>Reverse Lookup for Domain Associations:</strong><br/>Perform a reverse NS lookup to identify other domains using the same name servers. The chances of multiple accounts having the same pair of name servers are very slim, making this a reliable method to uncover related domains.<br/></li></ol><ol type="1" id="ac50103c-fef6-4edd-9f87-e5ed4da7adc7" class="numbered-list" start="3"><li><strong>Cross-Reference Name Servers:</strong><br/>By cross-referencing the results of the reverse lookups for both name servers, you can pinpoint domains that are highly likely to be associated with the same Cloudflare account.<br/></li></ol><hr id="7bcedaa3-b6c4-4bb9-930e-6b3e5e00e72b"/><h3 id="26cc224e-1dd3-43d7-add0-4994898a89ee" class="">Practical Implementation</h3><p id="e43c10e4-fabb-444a-9e15-1b5c9146044c" class="">Reverse NS lookups are not widely available through free or standard services, but platforms like SecurityTrails offer the necessary tools. SecurityTrails provides an API that allows for reverse DNS lookups, albeit with a limit of 50 API requests per month (as of the time of writing this article).</p><p id="23fe5f55-9b57-454a-ac7d-f56b7d546ed9" class=""><strong>SecurityTrails Specifics:</strong></p><ul id="88eaf7b9-7a88-4517-8890-71135ca8565f" class="bulleted-list"><li style="list-style-type:disc">SecurityTrails gives you a maximum of 50,000 results per search.</li></ul><ul id="c4088af0-778b-4b19-8ff5-30ed231c0576" class="bulleted-list"><li style="list-style-type:disc">These 50,000 results are the top-ranked sites associated with the name server.</li></ul><ul id="4f57309d-8234-4122-8db5-7ea2db8d554c" class="bulleted-list"><li style="list-style-type:disc">As a result, the cross-referencing between two name servers will never be a complete list, as only the top 50,000 sites from each name server are considered.</li></ul><p id="55a3795a-f811-4cf5-8bff-03c9c93ef3b1" class="">To address this limitation, I added an additional feature to the script. This feature allows for keyword searches within the results, enabling queries for domains that might not be in the top 50,000 but are still relevant to the search criteria.</p><hr id="40c9ed03-93b3-4c54-ba53-83b3f6e8ae51"/><h3 id="29415d25-71ea-418e-b8c4-24286cc120a8" class="">Using the Tool</h3><p id="6ab03eae-d9bd-4ce0-91fe-df9215a98eac" class="">To streamline this process, I developed a tool that integrates with the SecurityTrails API. Here’s a practical example of how to use this tool:</p><ol type="1" id="4022641c-ea99-49de-b105-24cb984e166a" class="numbered-list" start="1"><li><strong>Setup SecurityTrails Account:</strong><br/>Create an account on SecurityTrails and obtain your API key.<br/></li></ol><ol type="1" id="16e66ff6-0aea-46f7-98d1-b5ac33ad76ff" class="numbered-list" start="2"><li><strong>Install the Tool:</strong><br/>Download and install the tool from [your repository link].<br/></li></ol><ol type="1" id="1e99a6e7-8a2d-4f27-8401-3cf81ce94269" class="numbered-list" start="3"><li><strong>Configure the Tool:</strong><br/>Enter your SecurityTrails API key into the tool’s configuration file.<br/></li></ol><ol type="1" id="164306e3-10c6-49c4-ac29-232136c4389a" class="numbered-list" start="4"><li><strong>Run the Tool:</strong><br/>Execute the tool with the target domain’s name servers as input. The tool will perform the reverse NS lookups and cross-reference the results. Additionally, use the keyword search feature to query beyond the top 50,000 results.<br/></li></ol><hr id="41fdf19f-86e3-406a-9e3d-a3ad6283344e"/><h3 id="aeecc7d6-dd1b-4d90-9ed5-e5fba367694a" class="">Example Usage</h3><h4 id="aa3e21cf-7d2c-4baa-80b1-cb662bd1d0fe" class="">Cross-query Top 50K Results from Each NS:</h4><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4a2d887f-35fd-44fb-a20f-e1c2cb356054" class="code"><code style="white-space:pre-wrap;word-break:break-all">python3 securitytrails_enum.py [NS1] [NS2] -m cloudflare -f plain
+</code></pre><h4 id="52020b04-a6c3-4606-b5a1-e64c3630e683" class="">Query All Domains for Each NS with Keywords/Domain Extensions and Cross-Reference:</h4><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4a2d887f-35fd-44fb-a20f-e1c2cb356054" class="code"><code style="white-space:pre-wrap;word-break:break-all">python3 securitytrails_enum.py [NS1] [NS2] -m cloudflare -f plain -k bank,.co.il,morekeywords
+</code></pre><h4 id="b0b2d6a3-49e4-4dee-898f-8e2ea1713256" class="">Other Features of the Script:</h4><ul id="abd7249e-1b5d-48bb-a1a7-a8913d93f890" class="bulleted-list"><li style="list-style-type:disc"><strong>Subdomain Enumeration:</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4a2d887f-35fd-44fb-a20f-e1c2cb356054" class="code"><code style="white-space:pre-wrap;word-break:break-all">python3 securitytrails_enum.py [domain] -m sub_domain -f plain
+</code></pre></li></ul><ul id="f857fbfd-63d9-4026-a0eb-968fd6a1e665" class="bulleted-list"><li style="list-style-type:disc"><strong>Reverse Lookup on an IP:</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4a2d887f-35fd-44fb-a20f-e1c2cb356054" class="code"><code style="white-space:pre-wrap;word-break:break-all">python3 securitytrails_enum.py [IP] -m reverse_ip -f plain
+</code></pre></li></ul><ul id="6693b000-f0b5-4ccb-ae62-c05acaecb1b6" class="bulleted-list"><li style="list-style-type:disc"><strong>Keyword Search for Domains (Reveal Assets in AWS ELB, S3, etc.):</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4a2d887f-35fd-44fb-a20f-e1c2cb356054" class="code"><code style="white-space:pre-wrap;word-break:break-all">python3 securitytrails_enum.py [keyword] -m keyword -f plain
+</code></pre></li></ul><ul id="5763f7bf-7242-4709-8bbf-6e1a91e15427" class="bulleted-list"><li style="list-style-type:disc"><strong>Uncover Domain Real IP (if it was once exposed):</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4a2d887f-35fd-44fb-a20f-e1c2cb356054" class="code"><code style="white-space:pre-wrap;word-break:break-all">python3 securitytrails_enum.py [domain] -m real_ip -f plain
+</code></pre></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
