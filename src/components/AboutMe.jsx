@@ -22,7 +22,7 @@ const StyledAboutMe = styled.section`
 
 export default function AboutMe() {
   const { bio } = useSelector(selectData);
-  const manualAvatarUrl = "https://media.licdn.com/dms/image/D4D03AQEbk7CnFXuHQg/profile-displayphoto-shrink_800_800/0/1709304492605?e=1723680000&v=beta&t=XSwUJS-CXiQoi-HYhOxzEnrW7ItLjLsmO4__4bGI-tQ";
+  const manualAvatarUrl = "https://media.licdn.com/dms/image/D4D03AQEbk7CnFXuHQg/profile-displayphoto-shrink_800_800/0/1709304492605?e=1729123200&v=beta&t=Ne7tYnHE3ZzZQokNR7TUTRaXU6DN7VQurw5IYFJ9Iqs";
 
 
   return (

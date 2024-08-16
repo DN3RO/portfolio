@@ -25,6 +25,7 @@ import AllArticles from "./pages/AllArticles";
 import NotFound from "./pages/NotFound";
 import Article from "./components/Article";
 
+
 const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const themes = {
   light: {

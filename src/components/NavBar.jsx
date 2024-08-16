@@ -10,6 +10,8 @@ import { Icon } from "@iconify/react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 // Images
 import Logo from "./defaultNavLogo.svg";
+// Progress Component
+import Progress from "./Progress/Progress";
 
 // #region styled-components
 const StyledSwitch = styled.label`
@@ -21,7 +23,7 @@ const StyledSwitch = styled.label`
   transition: var(--transition);
   border: 2px solid;
 
-  /* Hide defualt checkbox */
+  /* Hide default checkbox */
   input[type="checkbox"] {
     height: 0;
     width: 0;
@@ -162,6 +164,7 @@ export default function NavBar({ Logo }) {
             </Nav>
           </Navbar.Collapse>
         </Container>
+        <Progress /> {/* Include the Progress bar here */}
       </Navbar>
     </>
   );

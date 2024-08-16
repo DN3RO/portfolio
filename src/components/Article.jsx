@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import blogData from '../blog_data.json';
 
+
 async function readHTMLFile(filePath) {
   try {
     const response = await fetch(filePath);
